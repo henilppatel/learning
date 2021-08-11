@@ -1,7 +1,16 @@
-function ExpenseItem() {
+import { toExpression } from '@babel/types';
+import './ExpenseItem.css';
+
+
+function ExpenseItem(props) {
+
     return(
-        <div>
-            <h1>Items in here</h1>
+        <div className ="expense-item">
+            <div>{props.date.toISOString()}</div>
+            <div className="expense-item_description">
+                <h2>{props.title}</h2>
+                <div className="expense-item_price">${props.amount}</div>
+            </div>
         </div>
     );
   }
